@@ -1,4 +1,3 @@
-#!/bin/bash
 # Jacob H
 # Overthewire bandit automation
 
@@ -13,10 +12,10 @@ def main():
     passwd.append(str(bandit3(passwd[3]).strip()))
     passwd.append(str(bandit4(passwd[4]).strip()))
 
-
     for i in range(0, len(passwd)):
         print(f"Pass bandit{i}: {passwd[i]}")
-    
+
+
 def bandit0(password):
     s = ssh(user='bandit0', host='bandit.labs.overthewire.org', port=2220, password=password)
     f = SSHPath('readme', ssh=s)
