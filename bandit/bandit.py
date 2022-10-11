@@ -2,7 +2,6 @@
 # Overthewire bandit automation
 
 from pwn import *
-import os
 
 def main():
     passwd = ["bandit0"]
@@ -14,7 +13,6 @@ def main():
 
     for i in range(0, len(passwd)):
         print(f"Pass bandit{i}: {passwd[i]}")
-
 
 def bandit0(password):
     s = ssh(user='bandit0', host='bandit.labs.overthewire.org', port=2220, password=password)
@@ -49,5 +47,4 @@ def bandit4(password):
     b5Pass = f.read_bytes().decode()
     return b5Pass
 
-  
 main()
